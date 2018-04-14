@@ -25,7 +25,7 @@ This code will fit entirely in a single shopify section, create a new sectino an
 
 In order for this code to work there must be a shopify collection created with a name that matches exactly what the product has in the metafield, for this I recommend tagging the product with the same value as the metafield and then having a smart collection with the same name look for products tagged with that value. 
 
-1) To begin, we need to make sure that this section only appears on products that have related items, so we will open and close an unless to check if the metafield we created to keep our collection is blank.
+##1) To begin, we need to make sure that this section only appears on products that have related items, so we will open and close an unless to check if the metafield we created to keep our collection is blank.
 ```
 {%- unless product.metafields.global.collection == blank -%}
     <section id="RelatedProducts">
@@ -33,7 +33,7 @@ In order for this code to work there must be a shopify collection created with a
     </section>
 {%- endunless -%}
 ```
-2) Now in order to make sure we only grab the items in the same collection we need to pass the mtafield value into a for product statement:
+##2) Now in order to make sure we only grab the items in the same collection we need to pass the mtafield value into a for product statement:
 ```
 {%- unless product.metafields.global.collection == blank -%}
     <section id="RelatedProducts">
