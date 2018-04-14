@@ -48,6 +48,9 @@ In order for this code to work there must be a shopify collection created with a
 Notice the `collections[product.metafields.global.Related].products` in the for loop. You can pass any metafield or other liquid code as a variable into another section of liquid code using square brackets.
 
 >Note: When passing a variable into other liquid code leave out the first period and make the object plural:
+
 >collections[product.metafields.global.Related].products
+
 >Not:
+
 >collection.[product.metafields.global.Related].products
