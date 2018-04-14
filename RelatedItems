@@ -1,0 +1,58 @@
+{%- unless product.metafields.global.collection == blank -%}
+<section class="BrowseRooms">
+    <h1 class="BrowseRoomsHeader">The {{ product.metafields.global.collection }} Collection</h1>
+    {%- if collections[product.metafields.global.Related].all_types contains 'Bedroom' -%}
+    <div class="ProductRow">
+        <h2 style="padding-bottom:15px;">Bedroom</h2>
+        <div class="multiple-items slider" data-sizes="50vw">
+            {%- for product in collections[product.metafields.global.Related].products -%} {%- if product.type contains 'Bedroom' -%}
+            <div>
+                <a href="{{ product.url }}">
+              <img src="{{ product.featured_image | product_img_url: 'x500' }}" alt="{{ product.title | escape  }}" data-sizes="100vw" style="width: 90%; margin: auto;"/>    
+            </a>
+            </div>
+            {%- endif -%} {%- endfor -%}
+        </div>
+    </div>
+    {%- endif -%} {%- if collections[product.metafields.global.Related].all_types contains 'Office' -%}
+    <div class="ProductRow">
+        <h2 style="padding-bottom:15px;">Office</h2>
+        <div class="multiple-items slider" data-sizes="50vw">
+            {%- for product in collections[product.metafields.global.Related].products -%} {%- if product.type contains 'Office' -%}
+            <div>
+                <a href="{{ product.url }}">
+              <img src="{{ product.featured_image | product_img_url: 'x500' }}" alt="{{ product.title | escape  }}" data-sizes="100vw" style="width: 90%; margin: auto;"/>    
+            </a>
+            </div>
+            {%- endif -%} {%- endfor -%}
+        </div>
+    </div>
+    {%- endif -%} {%- if collections[product.metafields.global.Related].all_types contains 'Dining' -%}
+    <div class="ProductRow">
+        <h2 style="padding-bottom:15px;">Dining Room</h2>
+        <div class="multiple-items slider" data-sizes="50vw">
+            {%- for product in collections[product.metafields.global.Related].products -%} {%- if product.type contains 'Dining' -%}
+            <div>
+                <a href="{{ product.url }}">
+              <img src="{{ product.featured_image | product_img_url: 'x500' }}" alt="{{ product.title | escape  }}" data-sizes="100vw" style="width: 90%; margin: auto;"/>    
+            </a>
+            </div>
+            {%- endif -%} {%- endfor -%}
+        </div>
+    </div>
+    {%- endif -%} {%- if collections[product.metafields.global.Related].all_types contains 'Living' -%}
+    <div class="ProductRow">
+        <h2 style="padding-bottom:15px;">Living Room</h2>
+        <div class="multiple-items slider" data-sizes="50vw">
+            {%- for product in collections[product.metafields.global.Related].products -%} {%- if product.type contains 'Living' -%}
+            <div>
+                <a href="{{ product.url }}">
+              <img src="{{ product.featured_image | product_img_url: 'x500' }}" alt="{{ product.title | escape  }}" data-sizes="100vw" style="width: 90%; margin: auto;"/>    
+            </a>
+            </div>
+            {%- endif -%} {%- endfor -%}
+        </div>
+    </div>
+    {%- endif -%}
+</section>
+{%- endunless -%}
