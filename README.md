@@ -37,7 +37,7 @@ In order for this code to work there must be a shopify collection created with a
 ```
 {%- unless product.metafields.global.collection == blank -%}
     <section id="RelatedProducts">
-        {%- for product in collections[product.metafields.global.Related].products -%}
+        {%- for product in collections[product.metafields.global.collection].products -%}
         <a href="{{ product.url }}">
             <h1>{{ product.name }}</h1>
         </a>
@@ -49,8 +49,10 @@ Notice the `collections[product.metafields.global.Related].products` in the for 
 
 >Note: When passing a variable into other liquid code leave out the first period and make the object plural:
 
->collections[product.metafields.global.Related].products
+```collections[product.metafields.global.Related].products```
 
 >Not:
 
->collection.[product.metafields.global.Related].products
+```collection.[product.metafields.global.Related].products```
+
+This will select products in the collection that corrisponds to the value of the metafield. If you are using this right, you should have an output of each product in the collection with a link to their product page
